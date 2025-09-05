@@ -41,6 +41,16 @@ git submodule update --init --recursive
 # this loads the .env file and runs the tests
 just test
 ```
+If you get errors with missing files, check that the `/lib/clanker-v4/lib`'s submodules are properly installed (files should not be empty). If you need to re-install the submodules for whatever reason:
+```
+# Clean all submodule state
+git submodule deinit --all --force
+rm -rf .git/modules
+git clean -fdx lib/
+
+# Start fresh
+git submodule update --init --recursive
+```
 
 ### Deployments
 
