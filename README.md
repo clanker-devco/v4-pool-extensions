@@ -22,7 +22,7 @@ Empty extensions for user development:
 
 ### Setup .env 
 
-Copy the .env.example file to .env and fill out the missing fields.
+Copy the .env.example file to .env and fill out the missing RPC field. This repo is currently only setup to work on Base Mainnet.
 
 ```bash
 cp .env.example .env
