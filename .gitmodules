@@ -1,0 +1,3 @@
+[submodule "lib/clanker-v4"]
+	path = lib/clanker-v4
+	url = https://github.com/clanker-devco/v4-contracts

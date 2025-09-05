@@ -1,0 +1,6 @@
+@openzeppelin/contracts/=lib/clanker-v4/lib/openzeppelin-contracts/contracts/
+@uniswap/v4-core/=lib/clanker-v4/lib/v4-core/
+@uniswap/v4-periphery/=lib/clanker-v4/lib/v4-periphery/
+@uniswap/universal-router/=lib/clanker-v4/lib/universal-router/
+@uniswap/permit2/=lib/clanker-v4/lib/permit2/
+@clanker-v4/=lib/clanker-v4/
