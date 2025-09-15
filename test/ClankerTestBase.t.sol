@@ -7,6 +7,8 @@ import {ClankerFeeLocker} from "@clanker-v4/src/ClankerFeeLocker.sol";
 import {ClankerUniv4EthDevBuy} from "@clanker-v4/src/extensions/ClankerUniv4EthDevBuy.sol";
 import {ClankerVault} from "@clanker-v4/src/extensions/ClankerVault.sol";
 import {ClankerHook} from "@clanker-v4/src/hooks/ClankerHook.sol";
+import {ClankerPoolExtensionAllowlist} from
+    "@clanker-v4/src/hooks/ClankerPoolExtensionAllowlist.sol";
 
 import {ClankerHookDynamicFeeV2} from "@clanker-v4/src/hooks/ClankerHookDynamicFeeV2.sol";
 import {ClankerHookStaticFee} from "@clanker-v4/src/hooks/ClankerHookStaticFee.sol";
@@ -76,6 +78,9 @@ contract ClankerTestBase is Test {
 
     // clanker addresses
     Clanker public clanker = Clanker(vm.envAddress("CLANKER"));
+    ClankerPoolExtensionAllowlist public poolExtensionAllowlist =
+        ClankerPoolExtensionAllowlist(vm.envAddress("CLANKER_POOL_EXTENSION_ALLOWLIST"));
+    address public poolExtensionAdminKey = vm.envAddress("CLANKER_POOL_EXTENSION_ADMIN_KEY");
     IClankerFeeLocker public feeLocker = IClankerFeeLocker(vm.envAddress("CLANKER_FEE_LOCKER"));
     IClankerLpLocker public lockerFeeConversion =
         IClankerLpLocker(vm.envAddress("CLANKER_LP_LOCKER_FEE_CONVERSION"));

@@ -44,6 +44,10 @@ contract CreateYourOwnExtensionExample is ClankerTestBase {
         // setup create your own extension
         createYourOwnExtension = new CreateYourOwnExtension();
 
+        // allowlist the CreateYourOwnExtension
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(createYourOwnExtension), true);
+
         baseDeploymentConfig.poolConfig.hook = address(staticHook);
         IClankerHookV2.PoolInitializationData memory poolInitializationData = IClankerHookV2
             .PoolInitializationData({

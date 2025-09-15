@@ -58,6 +58,11 @@ contract ClankerHookV2UniV3SwapExtensionTest is ClankerTestBase {
             address(bob),
             approvedHooks
         );
+
+        // allowlist the UniV3SwapExtension
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(uniV3SwapBack), true);
+
         // setup pool extension
         baseDeploymentConfig.poolConfig.hook = address(staticHook);
         IClankerHookV2.PoolInitializationData memory poolInitializationData = IClankerHookV2

@@ -41,6 +41,9 @@ contract PoolExtensionDataUsageTests is ClankerTestBase {
 
         // deploy PassedInDataExample
         passedInDataExample = new PassedInDataExample();
+        // allowlist the PassedInDataExample
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(passedInDataExample), true);
 
         // setup pool extension for static fee pool
         baseDeploymentConfig.poolConfig.hook = address(staticHook);

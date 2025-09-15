@@ -44,6 +44,11 @@ contract PoolExtensionCountExample is ClankerTestBase {
 
         // setup counter example pool extension
         countExample = new CountExample();
+
+        // allowlist the CountExample
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(countExample), true);
+
         baseDeploymentConfig.poolConfig.hook = address(staticHook);
         IClankerHookV2.PoolInitializationData memory poolInitializationData = IClankerHookV2
             .PoolInitializationData({

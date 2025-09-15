@@ -2,7 +2,7 @@
 
 This repo contains examples of Clanker v4.1 pool extension contracts. Pool extensions are a feature enabling advanced users to add custom logic to a pool's after swap flow. See the [documentation](https://clanker.gitbook.io/clanker-documentation/references/core-contracts/v4/clankerhookv2/pool-extensions) for a high level explainer.
 
-Note: users are expected to develop and deploy their own pool extensions, the Clanker team will not deploy pool extensions for you.
+Note: pool extensions are not enabled by default. To enable a pool extension that you developed, please reach out to the Clanker team. We're happy to help!
 
 ## Extension Examples
 

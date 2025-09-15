@@ -42,6 +42,10 @@ contract PoolExtensionOutOfGasExample is ClankerTestBase {
         // deploy OutOfGasExample
         outOfGasExample = new OutOfGasExample();
 
+        // allowlist the OutOfGasExample
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(outOfGasExample), true);
+
         // setup pool extension
         baseDeploymentConfig.poolConfig.hook = address(staticHook);
         IClankerHookV2.PoolInitializationData memory poolInitializationData = IClankerHookV2

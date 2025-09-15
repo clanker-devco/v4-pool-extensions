@@ -42,6 +42,10 @@ contract UserBalanceDeltaExampleTests is ClankerTestBase {
         // deploy UserBalanceDeltaExample
         userBalanceDeltaExample = new UserBalanceDeltaExample();
 
+        // allowlist the UserBalanceDeltaExample
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(userBalanceDeltaExample), true);
+
         // setup pool extension for static fee pool
         baseDeploymentConfig.poolConfig.hook = address(staticHook);
         IClankerHookV2.PoolInitializationData memory poolInitializationData = IClankerHookV2

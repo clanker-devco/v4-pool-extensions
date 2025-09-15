@@ -56,6 +56,10 @@ contract AssertFeeConfigExampleTest is ClankerTestBase {
             _approvedHooks: approvedHooks
         });
 
+        // allowlist the AssertFeeConfigExample
+        vm.prank(poolExtensionAdminKey);
+        poolExtensionAllowlist.setPoolExtension(address(assertFeeConfigExample), true);
+
         // setup pool extension
         baseDeploymentConfig.poolConfig.hook = address(staticHook);
         IClankerHookV2.PoolInitializationData memory poolInitializationData = IClankerHookV2
